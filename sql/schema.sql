@@ -1,0 +1,3 @@
+CREATE DATABASE enterprise_employee_analytics;
+
+USE enterprise_employee_analytics;
