@@ -16,9 +16,7 @@ class EmployeeDataSynthesizer:
         self.employee_data = None
         self.history_data = None
 
-    # ---------------------------------------------------------
-    # 1. Load the original IBM dataset
-    # ---------------------------------------------------------
+
     def load_data(self):
         print("Loading original dataset...")
 
@@ -27,9 +25,7 @@ class EmployeeDataSynthesizer:
         print(f"Original rows: {len(self.base_data)}")
         print(f"Original columns: {len(self.base_data.columns)}")
 
-    # ---------------------------------------------------------
-    # 2. Generate synthetic employee records
-    # ---------------------------------------------------------
+   
     def generate_employees(self):
 
         print("\nGenerating synthetic employees...")
@@ -65,9 +61,7 @@ class EmployeeDataSynthesizer:
 
         print(f"Generated employees: {len(self.employee_data)}")
 
-    # ---------------------------------------------------------
-    # 3. Generate SCD Type 2 historical records
-    # ---------------------------------------------------------
+
     def generate_history(self):
 
         print("\nGenerating SCD Type 2 historical records...")
@@ -145,9 +139,7 @@ class EmployeeDataSynthesizer:
             f"{len(self.history_data)}"
         )
 
-    # ---------------------------------------------------------
-    # 4. Save the generated datasets
-    # ---------------------------------------------------------
+
     def save_data(self):
 
         print("\nSaving generated datasets...")
@@ -165,9 +157,7 @@ class EmployeeDataSynthesizer:
         print("Employee dataset saved successfully.")
         print("SCD history dataset saved successfully.")
 
-    # ---------------------------------------------------------
-    # 5. Run the complete process
-    # ---------------------------------------------------------
+
     def run(self):
 
         self.load_data()
@@ -181,9 +171,7 @@ class EmployeeDataSynthesizer:
         print("\nData synthesis completed successfully!")
 
 
-# =============================================================
-# MAIN PROGRAM
-# =============================================================
+
 
 if __name__ == "__main__":
 
