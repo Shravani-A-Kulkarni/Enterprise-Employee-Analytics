@@ -500,3 +500,136 @@ FROM (
     GROUP BY employee_number
     HAVING SUM(is_current = 1) = 0
 ) AS x;
+
+USE enterprise_employee_analytics;
+
+SHOW TABLES;
+
+USE enterprise_employee_analytics;
+
+CREATE TABLE Project (
+    project_id INT PRIMARY KEY AUTO_INCREMENT,
+    project_name VARCHAR(100) NOT NULL,
+    department_id INT,
+    start_date DATE,
+    end_date DATE,
+    status VARCHAR(30),
+    
+    CONSTRAINT fk_project_department
+        FOREIGN KEY (department_id)
+        REFERENCES Department(department_id)
+);
+
+DESCRIBE Project;
+
+CREATE TABLE Assignment (
+    assignment_id INT PRIMARY KEY AUTO_INCREMENT,
+    employee_id INT NOT NULL,
+    project_id INT NOT NULL,
+    assigned_date DATE,
+    role VARCHAR(100),
+    allocation_percentage INT,
+
+    CONSTRAINT fk_assignment_employee
+        FOREIGN KEY (employee_id)
+        REFERENCES Employee(employee_id),
+
+    CONSTRAINT fk_assignment_project
+        FOREIGN KEY (project_id)
+        REFERENCES Project(project_id)
+);
+
+DESCRIBE Assignment;
+
+CREATE TABLE Reviews (
+    review_id INT PRIMARY KEY AUTO_INCREMENT,
+    employee_id INT NOT NULL,
+    review_date DATE,
+    review_period VARCHAR(30),
+    rating INT,
+    comments VARCHAR(500),
+
+    CONSTRAINT fk_review_employee
+        FOREIGN KEY (employee_id)
+        REFERENCES Employee(employee_id)
+);
+DESCRIBE Reviews;
+
+SELECT COUNT(*) AS project_count
+FROM Project;
+
+SELECT *
+FROM Project
+LIMIT 10;
+
+SELECT *
+FROM Department;
+
+INSERT INTO Project
+    (project_name, department_id, start_date, end_date, status)
+VALUES
+    ('Employee Analytics', 1, '2023-01-15', NULL, 'Active'),
+    ('HR Digital Transformation', 3, '2023-03-01', '2024-12-31', 'Completed'),
+    ('Sales Performance Optimization', 2, '2023-06-01', NULL, 'Active'),
+    ('Workforce Planning', 3, '2024-01-10', NULL, 'Active'),
+    ('Customer Insights Platform', 2, '2024-02-15', '2025-06-30', 'Completed'),
+    ('Data Modernization', 1, '2024-04-01', NULL, 'Active');
+    
+    SELECT COUNT(*) AS project_count
+FROM Project;
+
+SELECT *
+FROM Project;
+
+SELECT employee_id, employee_number
+FROM Employee
+LIMIT 10;
+
+INSERT INTO Assignment
+    (employee_id, project_id, assigned_date, role, allocation_percentage)
+VALUES
+    (1, 1, '2023-02-01', 'Data Analyst', 100),
+    (2, 1, '2023-02-01', 'Developer', 80),
+    (3, 2, '2023-03-15', 'HR Analyst', 100),
+    (4, 2, '2023-04-01', 'Developer', 60),
+    (5, 3, '2023-06-15', 'Business Analyst', 100),
+    (6, 3, '2023-07-01', 'Developer', 80),
+    (7, 4, '2024-01-15', 'HR Analyst', 100),
+    (8, 4, '2024-02-01', 'Data Analyst', 70),
+    (9, 5, '2024-03-01', 'Business Analyst', 100),
+    (10, 6, '2024-04-15', 'Developer', 90);
+    
+    SELECT COUNT(*) AS assignment_count
+FROM Assignment;
+SELECT *
+FROM Assignment;
+
+SELECT employee_id, employee_number
+FROM Employee
+LIMIT 10;
+
+INSERT INTO Reviews
+    (employee_id, review_date, review_period, rating, comments)
+VALUES
+    (1, '2023-12-15', '2023 Annual', 4, 'Strong performance and consistent delivery.'),
+    (2, '2023-12-15', '2023 Annual', 5, 'Excellent technical contribution.'),
+    (3, '2023-12-15', '2023 Annual', 4, 'Good performance and teamwork.'),
+    (4, '2023-12-15', '2023 Annual', 3, 'Meets expectations with room for improvement.'),
+    (5, '2023-12-15', '2023 Annual', 5, 'Outstanding performance.'),
+    (6, '2023-12-15', '2023 Annual', 4, 'Consistently meets project expectations.'),
+    (7, '2024-12-15', '2024 Annual', 4, 'Good performance and collaboration.'),
+    (8, '2024-12-15', '2024 Annual', 3, 'Meets expectations.'),
+    (9, '2024-12-15', '2024 Annual', 5, 'Excellent analytical performance.'),
+    (10, '2024-12-15', '2024 Annual', 4, 'Strong contribution to the project.');
+    
+    SELECT COUNT(*) AS review_count
+FROM Reviews;
+
+SELECT *
+FROM Reviews;
+
+SELECT COUNT(*) AS project_count FROM Project;
+
+SELECT COUNT(*) AS assignment_count FROM Assignment;
+
+SELECT COUNT(*) AS review_count FROM Reviews;
