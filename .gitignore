@@ -24,3 +24,8 @@ Thumbs.db
 *.tmp
 
 .streamlit/secrets.toml
+
+# Secrets (never commit)
+.env.*
+!.env.example
+.streamlit/secrets.toml
