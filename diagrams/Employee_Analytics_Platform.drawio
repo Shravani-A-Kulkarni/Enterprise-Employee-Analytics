@@ -1,0 +1,314 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Employee Analytics Platform" id="eap1">
+    <mxGraphModel dx="361" dy="198" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1491" pageHeight="635" background="#14232d" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#8fa5b3;dashed=1;dashPattern=4 3;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="128" width="204" x="14" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2a5468;strokeColor=#2a5468;fontColor=#ffffff;fontStyle=1;fontSize=11;fontFamily=IBM Plex Sans;" value="Application Layer" vertex="1">
+          <mxGeometry height="28" width="178" x="28" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=10;fontFamily=IBM Plex Sans;align=left;spacingLeft=9;verticalAlign=top;spacingTop=6;" value="&lt;b&gt;Python Application&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#9db1bd&quot; style=&quot;font-size:9px;font-weight:normal&quot;&gt;Application logic ·&lt;br&gt;database connections&lt;/font&gt;" vertex="1">
+          <mxGeometry height="66" width="178" x="28" y="129" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" edge="1" parent="1" style="endArrow=classic;endFill=1;endSize=4;strokeColor=#8fa5b3;strokeWidth=1.3;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="112" y="208" as="sourcePoint" />
+            <mxPoint x="112" y="282" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c6" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#9db1bd;fontFamily=IBM Plex Sans;" value="Operational&lt;br&gt;data access" vertex="1">
+          <mxGeometry height="30" width="80" x="118" y="228" as="geometry" />
+        </mxCell>
+        <mxCell id="c7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#8fa5b3;dashed=1;dashPattern=4 3;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="280" width="204" x="14" y="281" as="geometry" />
+        </mxCell>
+        <mxCell id="c8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2a5468;strokeColor=#2a5468;fontColor=#ffffff;fontStyle=1;fontSize=11;fontFamily=IBM Plex Sans;" value="Operational Source" vertex="1">
+          <mxGeometry height="28" width="178" x="28" y="294" as="geometry" />
+        </mxCell>
+        <mxCell id="c9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=10;fontFamily=IBM Plex Sans;align=left;spacingLeft=9;verticalAlign=top;spacingTop=6;" value="&lt;b&gt;Aiven Cloud&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#9db1bd&quot; style=&quot;font-size:9px;font-weight:normal&quot;&gt;Managed MySQL&lt;br&gt;SSL connection&lt;/font&gt;" vertex="1">
+          <mxGeometry height="58" width="178" x="28" y="332" as="geometry" />
+        </mxCell>
+        <mxCell id="c10" edge="1" parent="1" style="endArrow=classic;endFill=1;endSize=4;strokeColor=#8fa5b3;strokeWidth=1.3;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="117" y="390" as="sourcePoint" />
+            <mxPoint x="117" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=10;fontFamily=IBM Plex Sans;align=left;spacingLeft=9;verticalAlign=top;spacingTop=6;" value="&lt;font color=&quot;#9db1bd&quot; style=&quot;font-size: 9px; font-weight: normal;&quot;&gt;&lt;br&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="138" width="178" x="28" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="c12" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=9;fontColor=#ffffff;fontFamily=IBM Plex Sans;spacing=0;" value="Employees&lt;br&gt;Departments&lt;br&gt;Projects&lt;br&gt;Assignments&lt;br&gt;Reviews" vertex="1">
+          <mxGeometry height="84" width="150" x="36" y="462" as="geometry" />
+        </mxCell>
+        <mxCell id="c13" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=4;fillColor=none;strokeColor=#ffffff;" value="" vertex="1">
+          <mxGeometry height="20" width="16" x="36" y="424" as="geometry" />
+        </mxCell>
+        <mxCell id="c14" edge="1" parent="1" style="endArrow=classic;endFill=1;endSize=4;strokeColor=#8fa5b3;strokeWidth=1.3;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="218" y="477" as="sourcePoint" />
+            <mxPoint x="268" y="477" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c15" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#9db1bd;fontFamily=IBM Plex Sans;" value="Extract" vertex="1">
+          <mxGeometry height="14" width="44" x="222" y="458" as="geometry" />
+        </mxCell>
+        <mxCell id="c16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ff7355;strokeWidth=3;" value="" vertex="1">
+          <mxGeometry height="538" width="778" x="250" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ff7355;strokeColor=#ff7355;fontColor=#ffffff;fontStyle=1;fontSize=13;fontFamily=IBM Plex Sans;" value="Employee Analytics Platform" vertex="1">
+          <mxGeometry height="34" width="778" x="250" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2a5468;strokeColor=#2a5468;fontColor=#ffffff;fontStyle=1;fontSize=11;fontFamily=IBM Plex Sans;" value="Orchestration — Python + Pandas pipeline" vertex="1">
+          <mxGeometry height="25" width="741" x="268" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="c19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#e8a820;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="422" width="154" x="268" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="c20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2a5468;strokeColor=#2a5468;fontColor=#ffffff;fontStyle=1;fontSize=11;fontFamily=IBM Plex Sans;align=left;spacingLeft=32;" value="Ingestion" vertex="1">
+          <mxGeometry height="28" width="130" x="281" y="159" as="geometry" />
+        </mxCell>
+        <mxCell id="c21" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#3bb08f;strokeColor=none;fontColor=#ffffff;fontStyle=1;fontSize=9;fontFamily=IBM Plex Sans;" value="1" vertex="1">
+          <mxGeometry height="16" width="16" x="294" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="c22" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#9db1bd;fontFamily=IBM Plex Sans;" value="Extract operational&lt;br&gt;tables from OLTP" vertex="1">
+          <mxGeometry height="30" width="130" x="281" y="196" as="geometry" />
+        </mxCell>
+        <mxCell id="c23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=9;fontFamily=IBM Plex Sans;fontFamily=Courier New;" value="Employees" vertex="1">
+          <mxGeometry height="37" width="122" x="284" y="242" as="geometry" />
+        </mxCell>
+        <mxCell id="c24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=9;fontFamily=IBM Plex Sans;fontFamily=Courier New;" value="Departments" vertex="1">
+          <mxGeometry height="37" width="122" x="284" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="c25" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=9;fontFamily=IBM Plex Sans;fontFamily=Courier New;" value="Projects" vertex="1">
+          <mxGeometry height="37" width="122" x="284" y="338" as="geometry" />
+        </mxCell>
+        <mxCell id="c26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=9;fontFamily=IBM Plex Sans;fontFamily=Courier New;" value="Assignments" vertex="1">
+          <mxGeometry height="37" width="122" x="284" y="386" as="geometry" />
+        </mxCell>
+        <mxCell id="c27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=9;fontFamily=IBM Plex Sans;fontFamily=Courier New;" value="Reviews" vertex="1">
+          <mxGeometry height="37" width="122" x="284" y="434" as="geometry" />
+        </mxCell>
+        <mxCell id="c28" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#8fa5b3;dashed=1;dashPattern=4 3;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="422" width="199" x="449" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="c29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2a5468;strokeColor=#2a5468;fontColor=#ffffff;fontStyle=1;fontSize=11;fontFamily=IBM Plex Sans;align=left;spacingLeft=32;" value="ETL Pipeline" vertex="1">
+          <mxGeometry height="28" width="175" x="462" y="159" as="geometry" />
+        </mxCell>
+        <mxCell id="c30" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#3bb08f;strokeColor=none;fontColor=#ffffff;fontStyle=1;fontSize=9;fontFamily=IBM Plex Sans;" value="2" vertex="1">
+          <mxGeometry height="16" width="16" x="475" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="c31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=10;fontFamily=IBM Plex Sans;" value="&lt;b&gt;Extract&lt;/b&gt;" vertex="1">
+          <mxGeometry height="37" width="161" x="468" y="204" as="geometry" />
+        </mxCell>
+        <mxCell id="c32" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=10;fontFamily=IBM Plex Sans;" value="&lt;b&gt;Clean&lt;/b&gt;" vertex="1">
+          <mxGeometry height="37" width="161" x="468" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="c33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=10;fontFamily=IBM Plex Sans;" value="&lt;b&gt;Transform&lt;/b&gt;" vertex="1">
+          <mxGeometry height="37" width="161" x="468" y="316" as="geometry" />
+        </mxCell>
+        <mxCell id="c34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=10;fontFamily=IBM Plex Sans;" value="&lt;b&gt;Load&lt;/b&gt;" vertex="1">
+          <mxGeometry height="37" width="161" x="468" y="371" as="geometry" />
+        </mxCell>
+        <mxCell id="c35" edge="1" parent="1" source="c31" style="endArrow=classic;endFill=1;endSize=4;strokeColor=#8fa5b3;strokeWidth=1.3;html=1;rounded=0;" target="c32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c36" edge="1" parent="1" source="c32" style="endArrow=classic;endFill=1;endSize=4;strokeColor=#8fa5b3;strokeWidth=1.3;html=1;rounded=0;" target="c33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c37" edge="1" parent="1" source="c33" style="endArrow=classic;endFill=1;endSize=4;strokeColor=#8fa5b3;strokeWidth=1.3;html=1;rounded=0;" target="c34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c38" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;" value="" vertex="1">
+          <mxGeometry height="126" width="173" x="462" y="431" as="geometry" />
+        </mxCell>
+        <mxCell id="c39" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#9db1bd;fontFamily=IBM Plex Sans;" value="&lt;b style=&#39;color:#fff;font-size:10px&#39;&gt;SCD Type 2&lt;/b&gt;" vertex="1">
+          <mxGeometry height="18" width="173" x="462" y="435" as="geometry" />
+        </mxCell>
+        <mxCell id="c40" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#9db1bd;fontFamily=IBM Plex Sans;" value="Historical employee changes" vertex="1">
+          <mxGeometry height="14" width="173" x="462" y="453" as="geometry" />
+        </mxCell>
+        <mxCell id="c41" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=9;fontFamily=IBM Plex Sans;fontFamily=Courier New;" value="Start Date" vertex="1">
+          <mxGeometry height="22" width="144" x="477" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="c42" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=9;fontFamily=IBM Plex Sans;fontFamily=Courier New;" value="End Date" vertex="1">
+          <mxGeometry height="22" width="144" x="477" y="507" as="geometry" />
+        </mxCell>
+        <mxCell id="c43" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=9;fontFamily=IBM Plex Sans;fontFamily=Courier New;" value="Is Current" vertex="1">
+          <mxGeometry height="22" width="144" x="477" y="533" as="geometry" />
+        </mxCell>
+        <mxCell id="c44" edge="1" parent="1" style="endArrow=classic;endFill=1;endSize=4;strokeColor=#8fa5b3;strokeWidth=1.3;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="548" y="408" as="sourcePoint" />
+            <mxPoint x="548" y="431" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c45" edge="1" parent="1" style="endArrow=classic;endFill=1;endSize=4;strokeColor=#8fa5b3;strokeWidth=1.3;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="422" y="224" as="sourcePoint" />
+            <mxPoint x="468" y="224" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c46" edge="1" parent="1" style="endArrow=classic;endFill=1;endSize=4;strokeColor=#8fa5b3;strokeWidth=1.3;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="629" y="389" as="sourcePoint" />
+            <mxPoint x="676" y="389" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c47" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#8fa5b3;dashed=1;dashPattern=4 3;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="255" width="333" x="676" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="c48" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2a5468;strokeColor=#2a5468;fontColor=#ffffff;fontStyle=1;fontSize=11;fontFamily=IBM Plex Sans;align=left;spacingLeft=32;" value="OLAP Data Warehouse" vertex="1">
+          <mxGeometry height="28" width="309" x="689" y="159" as="geometry" />
+        </mxCell>
+        <mxCell id="c49" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#3bb08f;strokeColor=none;fontColor=#ffffff;fontStyle=1;fontSize=9;fontFamily=IBM Plex Sans;" value="3" vertex="1">
+          <mxGeometry height="16" width="16" x="702" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="c50" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=9;fontFamily=IBM Plex Sans;fontFamily=Courier New;" value="Dim_Employee" vertex="1">
+          <mxGeometry height="33" width="140" x="692" y="204" as="geometry" />
+        </mxCell>
+        <mxCell id="c51" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=9;fontFamily=IBM Plex Sans;fontFamily=Courier New;" value="Dim_Project" vertex="1">
+          <mxGeometry height="33" width="140" x="854" y="204" as="geometry" />
+        </mxCell>
+        <mxCell id="c52" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=9;fontFamily=IBM Plex Sans;fontFamily=Courier New;" value="Fact_&amp;lt;br&amp;gt;PerformanceReviews" vertex="1">
+          <mxGeometry height="46" width="160" x="760" y="273" as="geometry" />
+        </mxCell>
+        <mxCell id="c53" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=9;fontFamily=IBM Plex Sans;fontFamily=Courier New;" value="Dim_Date" vertex="1">
+          <mxGeometry height="33" width="140" x="692" y="345" as="geometry" />
+        </mxCell>
+        <mxCell id="c54" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=9;fontFamily=IBM Plex Sans;fontFamily=Courier New;" value="Dim_Department" vertex="1">
+          <mxGeometry height="33" width="140" x="854" y="345" as="geometry" />
+        </mxCell>
+        <mxCell id="c55" edge="1" parent="1" source="c50" style="endArrow=classic;endFill=1;endSize=4;strokeColor=#8fa5b3;strokeWidth=1.3;html=1;rounded=0;endArrow=none;" target="c52">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c56" edge="1" parent="1" source="c51" style="endArrow=classic;endFill=1;endSize=4;strokeColor=#8fa5b3;strokeWidth=1.3;html=1;rounded=0;endArrow=none;" target="c52">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c57" edge="1" parent="1" source="c53" style="endArrow=classic;endFill=1;endSize=4;strokeColor=#8fa5b3;strokeWidth=1.3;html=1;rounded=0;endArrow=none;" target="c52">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c58" edge="1" parent="1" source="c54" style="endArrow=classic;endFill=1;endSize=4;strokeColor=#8fa5b3;strokeWidth=1.3;html=1;rounded=0;endArrow=none;" target="c52">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c59" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#9db1bd;fontFamily=IBM Plex Sans;" value="Star schema · hosted on Aiven Cloud MySQL" vertex="1">
+          <mxGeometry height="16" width="309" x="689" y="383" as="geometry" />
+        </mxCell>
+        <mxCell id="c60" edge="1" parent="1" style="endArrow=classic;endFill=1;endSize=4;strokeColor=#8fa5b3;strokeWidth=1.3;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="842" y="403" as="sourcePoint" />
+            <mxPoint x="842" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c61" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#9db1bd;fontFamily=IBM Plex Sans;" value="Query" vertex="1">
+          <mxGeometry height="14" width="40" x="850" y="408" as="geometry" />
+        </mxCell>
+        <mxCell id="c62" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#8fa5b3;dashed=1;dashPattern=4 3;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="140" width="333" x="676" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="c63" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2a5468;strokeColor=#2a5468;fontColor=#ffffff;fontStyle=1;fontSize=11;fontFamily=IBM Plex Sans;align=left;spacingLeft=32;" value="Analytics &amp; Query (SQL)" vertex="1">
+          <mxGeometry height="28" width="309" x="689" y="443" as="geometry" />
+        </mxCell>
+        <mxCell id="c64" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#3bb08f;strokeColor=none;fontColor=#ffffff;fontStyle=1;fontSize=9;fontFamily=IBM Plex Sans;" value="4" vertex="1">
+          <mxGeometry height="16" width="16" x="702" y="449" as="geometry" />
+        </mxCell>
+        <mxCell id="c65" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=10;fontFamily=IBM Plex Sans;" value="&lt;b&gt;CTEs&lt;/b&gt;" vertex="1">
+          <mxGeometry height="33" width="90" x="692" y="483" as="geometry" />
+        </mxCell>
+        <mxCell id="c66" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=10;fontFamily=IBM Plex Sans;" value="&lt;b&gt;Window functions&lt;/b&gt;" vertex="1">
+          <mxGeometry height="33" width="204" x="794" y="483" as="geometry" />
+        </mxCell>
+        <mxCell id="c67" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=9;fontFamily=IBM Plex Sans;fontFamily=Courier New;" value="LAG()" vertex="1">
+          <mxGeometry height="32" width="90" x="692" y="526" as="geometry" />
+        </mxCell>
+        <mxCell id="c68" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=9;fontFamily=IBM Plex Sans;fontFamily=Courier New;" value="RANK()" vertex="1">
+          <mxGeometry height="32" width="90" x="789" y="526" as="geometry" />
+        </mxCell>
+        <mxCell id="c69" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=9;fontFamily=IBM Plex Sans;fontFamily=Courier New;" value="DENSE_RANK()" vertex="1">
+          <mxGeometry height="32" width="112" x="886" y="526" as="geometry" />
+        </mxCell>
+        <mxCell id="c70" edge="1" parent="1" style="endArrow=classic;endFill=1;endSize=4;strokeColor=#8fa5b3;strokeWidth=1.3;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1043" y="477" />
+              <mxPoint x="1043" y="300" />
+            </Array>
+            <mxPoint x="1009" y="477" as="sourcePoint" />
+            <mxPoint x="1060" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c71" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#9db1bd;fontFamily=IBM Plex Sans;" value="Results" vertex="1">
+          <mxGeometry height="14" width="40" x="1011" y="481" as="geometry" />
+        </mxCell>
+        <mxCell id="c72" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#8fa5b3;dashed=1;dashPattern=4 3;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="283" width="250" x="1060" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c73" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2a5468;strokeColor=#2a5468;fontColor=#ffffff;fontStyle=1;fontSize=11;fontFamily=IBM Plex Sans;align=left;spacingLeft=32;" value="Application &amp; Presentation" vertex="1">
+          <mxGeometry height="28" width="226" x="1072" y="91" as="geometry" />
+        </mxCell>
+        <mxCell id="c74" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#3bb08f;strokeColor=none;fontColor=#ffffff;fontStyle=1;fontSize=9;fontFamily=IBM Plex Sans;" value="5" vertex="1">
+          <mxGeometry height="16" width="16" x="1085" y="97" as="geometry" />
+        </mxCell>
+        <mxCell id="c75" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=10;fontFamily=IBM Plex Sans;align=left;spacingLeft=9;verticalAlign=top;spacingTop=6;" value="&lt;b&gt;Streamlit Application&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#9db1bd&quot; style=&quot;font-size:9px;font-weight:normal&quot;&gt;Interactive UI&lt;br&gt;Pages 1–4&lt;/font&gt;" vertex="1">
+          <mxGeometry height="74" width="226" x="1072" y="143" as="geometry" />
+        </mxCell>
+        <mxCell id="c76" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=10;fontFamily=IBM Plex Sans;align=left;spacingLeft=9;verticalAlign=top;spacingTop=6;" value="&lt;b&gt;Analytics Dashboard&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#9db1bd&quot; style=&quot;font-size:9px;font-weight:normal&quot;&gt;KPIs · Charts&lt;br&gt;Employee insights&lt;/font&gt;" vertex="1">
+          <mxGeometry height="74" width="226" x="1072" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="c77" edge="1" parent="1" source="c75" style="endArrow=classic;endFill=1;endSize=4;strokeColor=#8fa5b3;strokeWidth=1.3;html=1;rounded=0;" target="c76">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c78" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#8fa5b3;dashed=1;dashPattern=4 3;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="102" width="140" x="1337" y="134" as="geometry" />
+        </mxCell>
+        <mxCell id="c79" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2a5468;strokeColor=#2a5468;fontColor=#ffffff;fontStyle=1;fontSize=11;fontFamily=IBM Plex Sans;" value="Users" vertex="1">
+          <mxGeometry height="25" width="116" x="1349" y="146" as="geometry" />
+        </mxCell>
+        <mxCell id="c80" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=10;fontFamily=IBM Plex Sans;" value="&lt;b&gt;HR / Executive&lt;/b&gt;" vertex="1">
+          <mxGeometry height="42" width="116" x="1349" y="183" as="geometry" />
+        </mxCell>
+        <mxCell id="c81" edge="1" parent="1" style="endArrow=classic;endFill=1;endSize=4;strokeColor=#8fa5b3;strokeWidth=1.3;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1337" y="181" as="sourcePoint" />
+            <mxPoint x="1298" y="181" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c82" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#9db1bd;fontFamily=IBM Plex Sans;" value="Uses" vertex="1">
+          <mxGeometry height="14" width="34" x="1304" y="163" as="geometry" />
+        </mxCell>
+        <mxCell id="c83" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#8fa5b3;dashed=1;dashPattern=4 3;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="178" width="250" x="1060" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="c84" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2a5468;strokeColor=#2a5468;fontColor=#ffffff;fontStyle=1;fontSize=11;fontFamily=IBM Plex Sans;" value="Version Control &amp; Deployment" vertex="1">
+          <mxGeometry height="26" width="226" x="1072" y="443" as="geometry" />
+        </mxCell>
+        <mxCell id="c85" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=10;fontFamily=IBM Plex Sans;align=left;spacingLeft=9;verticalAlign=top;spacingTop=6;" value="&lt;b&gt;Streamlit Community Cloud&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#9db1bd&quot; style=&quot;font-size:9px;font-weight:normal&quot;&gt;Application deployment&lt;/font&gt;" vertex="1">
+          <mxGeometry height="50" width="226" x="1072" y="478" as="geometry" />
+        </mxCell>
+        <mxCell id="c86" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a2e3b;strokeColor=#8fa5b3;fontColor=#ffffff;fontSize=10;fontFamily=IBM Plex Sans;align=left;spacingLeft=9;verticalAlign=top;spacingTop=6;" value="&lt;b&gt;GitHub&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#9db1bd&quot; style=&quot;font-size:9px;font-weight:normal&quot;&gt;Source code + repository&lt;/font&gt;" vertex="1">
+          <mxGeometry height="42" width="226" x="1072" y="556" as="geometry" />
+        </mxCell>
+        <mxCell id="c87" edge="1" parent="1" source="c86" style="endArrow=classic;endFill=1;endSize=4;strokeColor=#8fa5b3;strokeWidth=1.3;html=1;rounded=0;" target="c85">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c88" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#9db1bd;fontFamily=IBM Plex Sans;" value="Deploy" vertex="1">
+          <mxGeometry height="14" width="44" x="1192" y="534" as="geometry" />
+        </mxCell>
+        <mxCell id="c89" edge="1" parent="1" style="endArrow=classic;endFill=1;endSize=4;strokeColor=#8fa5b3;strokeWidth=1.3;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1185" y="431" as="sourcePoint" />
+            <mxPoint x="1185" y="357" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c90" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#9db1bd;fontFamily=IBM Plex Sans;" value="Runs" vertex="1">
+          <mxGeometry height="14" width="40" x="1192" y="388" as="geometry" />
+        </mxCell>
+        <mxCell id="MMqdbxkM5wvUg_V3SZHK-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;" value="&lt;b style=&quot;color: rgb(255, 255, 255); font-family: &amp;quot;IBM Plex Sans&amp;quot;; font-size: 10px; text-align: left;&quot;&gt;OLTP MySQL&lt;/b&gt;&lt;br style=&quot;color: rgb(255, 255, 255); font-family: &amp;quot;IBM Plex Sans&amp;quot;; font-size: 10px; text-align: left;&quot;&gt;&lt;font style=&quot;font-family: &amp;quot;IBM Plex Sans&amp;quot;; text-align: left; font-size: 9px;&quot;&gt;&lt;span style=&quot;color: light-dark(rgb(157, 177, 189), rgb(237, 237, 237));&quot;&gt;Operational database&lt;/span&gt;&lt;br&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="48" width="120" x="32" y="410" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
