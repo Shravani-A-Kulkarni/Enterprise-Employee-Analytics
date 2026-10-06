@@ -5,6 +5,7 @@ assignment, so an invalid object can never be built. Each class also owns its
 behaviour (full_name(), is_active(), rating_label() ...) and knows how to turn
 itself into a database row (to_db_row()).
 """
+import re
 from datetime import date
 
 GENDERS = ["Male", "Female"]
@@ -37,6 +38,44 @@ def _check_text(value, name, max_len=100):
     if len(value) > max_len:
         raise ValueError(f"{name} must be at most {max_len} characters")
     return value
+
+
+_NAME_RE = re.compile(r"^[^\W\d_]+(?:[ '\-][^\W\d_]+)*$")          # letters; space, hyphen, apostrophe only BETWEEN letters
+_PROJECT_RE = re.compile(r"^(?=.*[^\W\d_])[\w &().,'/:\-]{3,100}$")   # must contain a letter
+_ROLE_RE = re.compile(r"^(?=.*[^\W\d_])(?:[^\W\d_]|[ &/\-]){2,50}$")  # letters, spaces, & / -
+
+
+def _check_name(value, label):
+    """Person names: letters only (spaces, hyphens and apostrophes allowed inside, e.g. Anne-Marie, O'Brien)."""
+    value = re.sub(r"\s+", " ", (value or "").strip())
+    if not value:
+        raise ValueError(f"{label} is required")
+    if not _NAME_RE.match(value):
+        raise ValueError(f"{label} may contain only letters (spaces, hyphens and apostrophes are allowed inside a name)")
+    if not 2 <= len(value) <= 50:
+        raise ValueError(f"{label} must be 2 to 50 characters long")
+    return value
+
+
+def _check_project_name(value):
+    value = re.sub(r"\s+", " ", (value or "").strip())
+    if not value:
+        raise ValueError("Project name is required")
+    if not _PROJECT_RE.match(value):
+        raise ValueError("Project name must be 3 to 100 characters, contain letters, and use only letters, digits, "
+                         "spaces and & ( ) . , ' / : -")
+    return value
+
+
+def check_role(value):
+    """Role on a project: letters, spaces, & / - only."""
+    value = re.sub(r"\s+", " ", (value or "").strip())
+    if not value:
+        raise ValueError("Role is required")
+    if not _ROLE_RE.match(value):
+        raise ValueError("Role may contain only letters, spaces and & / - (2 to 50 characters)")
+    return value
+
 
 
 def _check_choice(value, name, options):
@@ -75,12 +114,12 @@ class Employee:
     @property
     def first_name(self): return self._first_name
     @first_name.setter
-    def first_name(self, v): self._first_name = _check_text(v, "First name")
+    def first_name(self, v): self._first_name = _check_name(v, "First name")
 
     @property
     def last_name(self): return self._last_name
     @last_name.setter
-    def last_name(self, v): self._last_name = _check_text(v, "Last name")
+    def last_name(self, v): self._last_name = _check_name(v, "Last name")
 
     @property
     def age(self): return self._age
@@ -210,7 +249,7 @@ class Project:
     @property
     def project_name(self): return self._project_name
     @project_name.setter
-    def project_name(self, v): self._project_name = _check_text(v, "Project name")
+    def project_name(self, v): self._project_name = _check_project_name(v)
 
     @property
     def department_id(self): return self._department_id
