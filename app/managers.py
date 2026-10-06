@@ -14,7 +14,7 @@ inside the SAME transaction, so OLTP and warehouse never disagree.
 from datetime import date, timedelta
 
 from db_manager import DatabaseConnection, DatabaseError, get_setting
-from entities import Employee, Project, Review
+from entities import Employee, Project, Review, check_role
 
 BASELINE_START = date(2025, 1, 1)   # same "current version" start date the synthesizer used
 
@@ -248,9 +248,10 @@ class ProjectManager(DatabaseConnection):
 
     def assign_employee(self, employee_number, project_id, assigned_date, role, allocation):
         """Returns {'assignment_id', 'total_allocation'} (total > 100 means over-allocated)."""
-        role = (role or "").strip()
-        if not role:
-            raise DatabaseError("Role is required")
+        try:
+            role = check_role(role)
+        except ValueError as exc:
+            raise DatabaseError(str(exc)) from exc
         if not 1 <= int(allocation) <= 100:
             raise DatabaseError("Allocation must be between 1 and 100")
         try:
