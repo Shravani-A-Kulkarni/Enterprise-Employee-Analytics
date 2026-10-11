@@ -1,6 +1,6 @@
 -- =====================================================================
--- 07_seed_demo_data.sql   (Member 3)  -- OLTP database only
--- Run ONCE on enterprise_employee_analytics, then re-run Member 2's
+-- 07_seed_demo_data.sql  -- OLTP database only
+-- Run ONCE on enterprise_employee_analytics, then re-run 
 --   python python/etl_pipeline.py
 -- so the warehouse picks up the new rows.
 --
