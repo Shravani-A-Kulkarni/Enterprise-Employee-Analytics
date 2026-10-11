@@ -1,7 +1,6 @@
 -- =====================================================================
--- 06_app_support.sql   (written by Member 3 for the Streamlit app)
+-- 06_app_support.sql   
 -- Run AFTER 01_olap_ddl.sql and 02_olap_dml.sql.
--- Hand this file to Member 2 so it can live in the warehouse branch.
 --
 --  1. Index + DimDate extension (reviews dated 2026/2027 need a date_key)
 --  2. sp_scd2_update_employee : SCD Type 2 change (close old row, insert new)
