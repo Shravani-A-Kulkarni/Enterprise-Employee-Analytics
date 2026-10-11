@@ -1,5 +1,4 @@
--- =====================================================================
--- 08_aiven_setup.sql   (Member 3)
+-- 08_aiven_setup.sql
 -- Run this ONCE on the hosted (Aiven) MySQL, right after importing the dump of
 -- your two local databases. Safe to run again: it only changes what still needs fixing.
 --
@@ -13,7 +12,7 @@
 -- names are case-sensitive, but the app and SQL scripts use `Employee`, `DimEmployee` ...
 --   PART A renames the 16 tables back (skipped automatically if already correct).
 --   PART B recreates the 5 stored procedures the app calls (not part of the export).
--- =====================================================================
+
 
 -- ---------------------------------------------------------------------
 -- PART A: restore table names
