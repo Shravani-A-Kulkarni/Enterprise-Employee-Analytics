@@ -29,3 +29,5 @@ Thumbs.db
 .env.*
 !.env.example
 .streamlit/secrets.toml
+
+.coverage
