@@ -2,7 +2,7 @@
 
 An end-to-end employee data platform: operational data entry (OLTP), an ETL pipeline, a star-schema data warehouse (OLAP) with **SCD Type 2** history, and a Streamlit web app with interactive analytics. The database runs on **Aiven MySQL** and the app is deployed on **Streamlit Community Cloud**.
 
-**Live app:** https://enterprise-employee-analytics-vwrm6uzkwr63wvwzj8fvdv.streamlit.app/
+**Live app:** https://enterprise-employee-analytics-test-keap9e5b54zmhip7gfkgcl.streamlit.app/
 
 > The database is on a free cloud plan that sleeps when idle. If the app shows "Down", open it again after a minute.
 
