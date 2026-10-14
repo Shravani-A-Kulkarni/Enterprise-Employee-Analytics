@@ -1,8 +1,10 @@
 # Enterprise Employee Analytics
 
-An end-to-end employee data platform: operational data entry (OLTP), an ETL pipeline, a star-schema data warehouse (OLAP) with **SCD Type 2** history, and a Streamlit web app with interactive analytics. The database runs on **Aiven MySQL** and the app is deployed on **Streamlit Community Cloud**.
+An end-to-end employee data platform: operational data entry (OLTP), an ETL pipeline, a star-schema data warehouse (OLAP) with **SCD Type 2** history, and a Streamlit web app with **role-based login** and interactive analytics. The database runs on **Aiven MySQL** and the app is deployed on **Streamlit Community Cloud**.
 
-**Live app:** https://enterprise-employee-analytics-test-keap9e5b54zmhip7gfkgcl.streamlit.app/
+**Live app:** https://enterprise-employee-analytics-test-keap9e5b54zmhip7gfkgcl.streamlit.app/  
+**Source code:** https://github.com/Shravani-A-Kulkarni/Enterprise-Employee-Analytics  
+**Full documentation:** [`docs/Enterprise_Employee_Analytics_Documentation.docx`](docs/Enterprise_Employee_Analytics_Documentation.docx)
 
 > The database is on a free cloud plan that sleeps when idle. If the app shows "Down", open it again after a minute.
 
@@ -10,12 +12,26 @@ An end-to-end employee data platform: operational data entry (OLTP), an ETL pipe
 
 | Area | Features |
 |---|---|
+| Sign-in & roles | Email + password login (salted PBKDF2 hashes); **HR**, **Manager** and **Employee** roles see only the pages they are allowed to open |
 | Employees | Onboard employees, update department / role / level / salary (SCD Type 2), search and filter the directory |
 | Projects | Create projects, assign employees with a role and allocation %, view teams (warns above 100% total allocation) |
 | Reviews | Submit a 1-5 rating with comments, view review history |
 | Analytics | Year-over-year performance (`LAG()`), top performers per department (`DENSE_RANK()`), attrition risk, project bottlenecks |
+| My Profile | Employees see only their own details, projects, reviews and career history (all SCD versions) |
 
 Every save runs as **one transaction**: write to the OLTP database, sync the warehouse with a stored procedure, then commit (or roll everything back).
+
+## Roles and access
+
+| Role | Pages |
+|---|---|
+| HR | Home, Onboarding, Projects, Reviews, Analytics |
+| Manager | Home, Projects, Reviews, Analytics |
+| Employee | Home, My Profile (own data only) |
+
+Access is defined in one table (`PAGE_ACCESS` in `app/auth.py`). Passwords are stored as `pbkdf2_sha256` hashes in the `AppUser` table (run `sql/10_app_users.sql`).
+
+**Demo accounts** (password for all: `Demo@123`): `hr@company.com` (HR), `manager@company.com` (Manager), `employee1@company.com` and `employee2@company.com` (Employee). Set `SHOW_DEMO_LOGINS = "0"` in `.env` / Streamlit Secrets to hide the list on the login page.
 
 ## Architecture
 
@@ -30,29 +46,33 @@ flowchart LR
 
 ## Tech stack
 
-Python 3, pandas, Faker, MySQL 8 (stored procedures, CTEs, window functions), mysql-connector-python, Streamlit, Plotly, python-dotenv, Git/GitHub, MySQL Workbench, Aiven MySQL, Streamlit Community Cloud.
+Python 3, pandas, Faker, MySQL 8 (stored procedures, CTEs, window functions), mysql-connector-python, Streamlit, Plotly, python-dotenv, pytest, Git/GitHub, MySQL Workbench, draw.io, Aiven MySQL, Streamlit Community Cloud.
 
 ## Repository structure
 
 ```
 app/            Streamlit app and OOP backend
-  db_manager.py   DatabaseConnection (Singleton, thread-safe, transactions)
-  entities.py     Employee, Project, Review (validated attributes)
-  managers.py     EmployeeManager, ProjectManager, ReviewManager (OLTP), AnalyticsManager (OLAP)
-  ui_helpers.py   shared Streamlit helpers (cached lookups)
-  streamlit_app.py  home page (connection status + KPIs)
-  pages/          1_Onboarding.py, 2_Projects.py, 3_Reviews.py, 4_Analytics.py
+  streamlit_app.py  entry point and role-based page router
+  login.py          sign-in page
+  auth.py           password hashing, AuthManager, PAGE_ACCESS
+  db_manager.py     DatabaseConnection (Singleton, thread-safe, transactions)
+  entities.py       Employee, Project, Review (validated attributes)
+  managers.py       EmployeeManager, ProjectManager, ReviewManager (OLTP), AnalyticsManager (OLAP)
+  ui_helpers.py     shared Streamlit helpers (cached lookups)
+  pages/          0_Home, 1_Onboarding, 2_Projects, 3_Reviews, 4_Analytics, 5_My_Profile
 python/         data_synthesizer.py, inspect_dataset.py, validate_synthetic_data.py, etl_pipeline.py
-sql/            01_olap_ddl, 02_olap_dml, 03_stored_procedures, 04_cte_queries, 05_window_functions,
-                06_app_support, 07_seed_demo_data, 08_aiven_setup, schema (OLTP)
+sql/            schema (OLTP), 01_olap_ddl, 02_olap_dml, 03_stored_procedures, 04_cte_queries,
+                05_window_functions, 06_app_support, 07_seed_demo_data, 08_aiven_setup,
+                09_add_employee_email, 10_app_users
 data/           IBM HR dataset + synthesized CSVs
-diagrams/       ER diagram and dimensional model (MySQL Workbench)
-tests/          smoke_test.py (34 end-to-end checks)
+diagrams/       draw.io sources + PNGs: system architecture, data flow, OLTP/OLAP ER and data models
+tests/          smoke_test.py (end-to-end) + pytest unit tests
+docs/           project documentation (Word)
 ```
 
 ## Data model
 
-**OLTP (normalized):** `Employee`, `Department`, `JobRole`, `EducationField`, `Project`, `Assignment`, `Reviews`, plus `employee_scd_history`. Primary and foreign keys enforce integrity.
+**OLTP (normalized):** `Employee`, `Department`, `JobRole`, `EducationField`, `Project`, `Assignment`, `Reviews`, `employee_scd_history`, plus `AppUser` (logins). Primary and foreign keys enforce integrity.
 
 **OLAP (star schema):**
 
@@ -104,9 +124,11 @@ cp .env.example .env              # then fill in your MySQL values
 2. Run `sql/01_olap_ddl.sql`, then `sql/02_olap_dml.sql` (creates and loads the warehouse).
 3. Run `sql/07_seed_demo_data.sql` **once** (more projects, assignments and reviews; fixes the overtime column). For speed, first run `CREATE INDEX idx_staging_empno ON employee_staging (EmployeeNumber);`.
 4. Run `sql/06_app_support.sql` (app stored procedures).
-5. Load the new rows into the warehouse: `python python/etl_pipeline.py`
-6. Check everything: `python tests/smoke_test.py` (should end with `ALL CHECKS PASSED`)
-7. Start the app: `streamlit run app/streamlit_app.py`
+5. Run `sql/09_add_employee_email.sql` **once** (adds the unique `email` column to `Employee`) if your schema does not have it yet.
+6. Run `sql/10_app_users.sql` **once** (creates the `AppUser` login table and the 4 demo accounts).
+7. Load the new rows into the warehouse: `python python/etl_pipeline.py`
+8. Check everything: `python tests/smoke_test.py` (should end with `ALL CHECKS PASSED`) and `pytest tests`
+9. Start the app: `streamlit run app/streamlit_app.py` and sign in with a demo account
 
 ### Configuration (`.env`, never committed)
 
@@ -116,18 +138,22 @@ cp .env.example .env              # then fill in your MySQL values
 | `MYSQL_USER`, `MYSQL_PASSWORD` | credentials |
 | `OLTP_DB`, `OLAP_DB` | `enterprise_employee_analytics`, `enterprise_employee_analytics_olap` |
 | `MYSQL_SSL_CA` | path to the CA certificate for hosted MySQL (e.g. `ca.pem`) |
+| `SHOW_DEMO_LOGINS` | optional; `1` (default) shows the demo accounts on the login page, `0` hides them |
 
 ## Deployment
 
 1. Create a free **Aiven MySQL** service and export the two local databases (Workbench Data Export), then import them into Aiven.
-2. Aiven runs on Linux, where table names are case-sensitive: run `sql/08_aiven_setup.sql` once to restore the table names and create the 5 stored procedures.
+2. Aiven runs on Linux, where table names are case-sensitive: run `sql/08_aiven_setup.sql` once to restore the table names and create the 5 stored procedures. Also run `sql/09_add_employee_email.sql` and `sql/10_app_users.sql` on the OLTP database if they were not part of the export.
 3. On **Streamlit Community Cloud**, create an app from this repository: branch `main`, main file `app/streamlit_app.py`, and paste the settings above into **Secrets** (use `MYSQL_SSL_CA = "ca.pem"`).
 
 Passwords live only in `.env` (git-ignored) or Streamlit Secrets, never in the code.
 
 ## Testing
 
-`python tests/smoke_test.py` runs 34 checks against the real databases: Singleton and connections, entity validation, onboarding and warehouse load, SCD Type 2 and rollback, projects, assignments and reviews (including duplicate and invalid input), and every analytics query. The deployed app was also tested end to end.
+- `python tests/smoke_test.py` runs end-to-end checks against the real databases: Singleton and connections, entity validation, onboarding and warehouse load, SCD Type 2 and rollback, projects, assignments and reviews (including duplicate and invalid input), and every analytics query.
+- `pytest tests` runs the unit tests (about 130): `test_entities`, `test_managers`, `test_db_manager`, `test_auth`, `test_ui_helpers`, `test_login`, `test_streamlit_app`.
+
+The deployed app was also tested end to end for each role.
 
 ## Git workflow
 
@@ -143,4 +169,4 @@ Work was done on feature branches (`feature/data-oltp`, `feature/olap-etl-datawa
 
 ## Limitations and future scope
 
-The data is synthetic, and the attrition score is a transparent rule-based model rather than machine learning. Future work: predictive attrition models, role-based authentication, scheduled ETL, more dashboards and KPIs, alerts for high-risk employees, project capacity planning and CI/CD.
+The data is synthetic, and the attrition score is a transparent rule-based model rather than machine learning. Login uses demo accounts (no self-service sign-up, password reset or SSO). Future work: predictive attrition models, scheduled ETL, more dashboards and KPIs, alerts for high-risk employees, project capacity planning and CI/CD.
