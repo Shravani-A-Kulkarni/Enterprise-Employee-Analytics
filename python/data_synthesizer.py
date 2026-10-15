@@ -25,7 +25,7 @@ class EmployeeDataSynthesizer:
         print(f"Original rows: {len(self.base_data)}")
         print(f"Original columns: {len(self.base_data.columns)}")
 
-   
+
     def generate_employees(self):
 
         print("\nGenerating synthetic employees...")

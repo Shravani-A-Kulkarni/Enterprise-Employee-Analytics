@@ -1,5 +1,5 @@
 -- =====================================================================
--- 06_app_support.sql   
+-- 06_app_support.sql
 -- Run AFTER 01_olap_ddl.sql and 02_olap_dml.sql.
 --
 --  1. Index + DimDate extension (reviews dated 2026/2027 need a date_key)

@@ -31,3 +31,4 @@ Thumbs.db
 .streamlit/secrets.toml
 
 .coverage
+ca.pem

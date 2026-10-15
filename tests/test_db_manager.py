@@ -222,8 +222,8 @@ def test_get_setting_uses_streamlit_secret(monkeypatch):
 def test_get_setting_returns_default_when_secrets_fail(monkeypatch):
     monkeypatch.delenv("TEST_DB_SETTING", raising=False)
 
-    
-    
+
+
 
     class FakeStreamlit:
         @property

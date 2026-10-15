@@ -589,7 +589,7 @@ def load_dim_employee_scd():
     unchanged = 0
 
     # Process each employee
-    
+
 
     for _, employee in employees.iterrows():
 
@@ -722,8 +722,8 @@ def load_dim_employee_scd():
             inserted += 1
             continue
 
-        # Employee already exists → check for SCD changes
-        
+        # Employee already exists â†’ check for SCD changes
+
 
         old_record = current_map[employee_number]
 
@@ -744,9 +744,9 @@ def load_dim_employee_scd():
             unchanged += 1
             continue
 
-        
+
         # SCD Type 2 change detected
-       
+
 
         change_date = date.today()
 

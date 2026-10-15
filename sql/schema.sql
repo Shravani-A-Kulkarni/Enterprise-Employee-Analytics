@@ -334,11 +334,11 @@
 --     ON s.JobRole = j.job_role_name
 -- LEFT JOIN EducationField e
 --     ON s.EducationField = e.education_field_name;
-    
+
 -- SELECT COUNT(*) AS total_employees
 -- FROM Employee;
 
--- SELECT * 
+-- SELECT *
 -- FROM Employee
 -- LIMIT 10;
 
@@ -444,7 +444,7 @@
 --     ),
 --     effective_start_date = @start_date,
 --     effective_end_date = NULLIF(@end_date, '');
-    
+
 -- SELECT COUNT(*) AS total_history_records
 -- FROM employee_scd_history;
 
@@ -452,13 +452,13 @@
 -- FROM employee_scd_history
 -- LIMIT 10;
 
--- SELECT 
+-- SELECT
 --     is_current,
 --     COUNT(*) AS record_count
 -- FROM employee_scd_history
 -- GROUP BY is_current;
 
--- SELECT 
+-- SELECT
 --     employee_number,
 --     COUNT(*) AS current_records
 -- FROM employee_scd_history
@@ -478,8 +478,8 @@
 --       OR h.monthly_income <> e.monthly_income
 --       OR h.job_level <> e.job_level
 --   );
-  
---   SELECT 
+
+--   SELECT
 --     employee_number,
 --     COUNT(*) AS current_record_count
 -- FROM employee_scd_history
@@ -487,12 +487,12 @@
 -- GROUP BY employee_number
 -- HAVING COUNT(*) > 1;
 
--- SELECT 
+-- SELECT
 --     COUNT(DISTINCT employee_number) AS employees_with_current_record
 -- FROM employee_scd_history
 -- WHERE is_current = 1;
 
--- SELECT 
+-- SELECT
 --     COUNT(*) AS employees_without_current_record
 -- FROM (
 --     SELECT employee_number
@@ -514,7 +514,7 @@
 --     start_date DATE,
 --     end_date DATE,
 --     status VARCHAR(30),
-    
+
 --     CONSTRAINT fk_project_department
 --         FOREIGN KEY (department_id)
 --         REFERENCES Department(department_id)
@@ -574,7 +574,7 @@
 --     ('Workforce Planning', 3, '2024-01-10', NULL, 'Active'),
 --     ('Customer Insights Platform', 2, '2024-02-15', '2025-06-30', 'Completed'),
 --     ('Data Modernization', 1, '2024-04-01', NULL, 'Active');
-    
+
 --     SELECT COUNT(*) AS project_count
 -- FROM Project;
 
@@ -598,7 +598,7 @@
 --     (8, 4, '2024-02-01', 'Data Analyst', 70),
 --     (9, 5, '2024-03-01', 'Business Analyst', 100),
 --     (10, 6, '2024-04-15', 'Developer', 90);
-    
+
 --     SELECT COUNT(*) AS assignment_count
 -- FROM Assignment;
 -- SELECT *
@@ -621,7 +621,7 @@
 --     (8, '2024-12-15', '2024 Annual', 3, 'Meets expectations.'),
 --     (9, '2024-12-15', '2024 Annual', 5, 'Excellent analytical performance.'),
 --     (10, '2024-12-15', '2024 Annual', 4, 'Strong contribution to the project.');
-    
+
 --     SELECT COUNT(*) AS review_count
 -- FROM Reviews;
 
@@ -972,11 +972,11 @@ LEFT JOIN JobRole j
     ON s.JobRole = j.job_role_name
 LEFT JOIN EducationField e
     ON s.EducationField = e.education_field_name;
-    
+
 SELECT COUNT(*) AS total_employees
 FROM Employee;
 
-SELECT * 
+SELECT *
 FROM Employee
 LIMIT 10;
 
@@ -1082,7 +1082,7 @@ SET
     ),
     effective_start_date = @start_date,
     effective_end_date = NULLIF(@end_date, '');
-    
+
 SELECT COUNT(*) AS total_history_records
 FROM employee_scd_history;
 
@@ -1090,13 +1090,13 @@ SELECT *
 FROM employee_scd_history
 LIMIT 10;
 
-SELECT 
+SELECT
     is_current,
     COUNT(*) AS record_count
 FROM employee_scd_history
 GROUP BY is_current;
 
-SELECT 
+SELECT
     employee_number,
     COUNT(*) AS current_records
 FROM employee_scd_history
@@ -1116,8 +1116,8 @@ WHERE h.is_current = 1
       OR h.monthly_income <> e.monthly_income
       OR h.job_level <> e.job_level
   );
-  
-  SELECT 
+
+  SELECT
     employee_number,
     COUNT(*) AS current_record_count
 FROM employee_scd_history
@@ -1125,12 +1125,12 @@ WHERE is_current = 1
 GROUP BY employee_number
 HAVING COUNT(*) > 1;
 
-SELECT 
+SELECT
     COUNT(DISTINCT employee_number) AS employees_with_current_record
 FROM employee_scd_history
 WHERE is_current = 1;
 
-SELECT 
+SELECT
     COUNT(*) AS employees_without_current_record
 FROM (
     SELECT employee_number
@@ -1152,7 +1152,7 @@ CREATE TABLE Project (
     start_date DATE,
     end_date DATE,
     status VARCHAR(30),
-    
+
     CONSTRAINT fk_project_department
         FOREIGN KEY (department_id)
         REFERENCES Department(department_id)
@@ -1212,7 +1212,7 @@ VALUES
     ('Workforce Planning', 3, '2024-01-10', NULL, 'Active'),
     ('Customer Insights Platform', 2, '2024-02-15', '2025-06-30', 'Completed'),
     ('Data Modernization', 1, '2024-04-01', NULL, 'Active');
-    
+
     SELECT COUNT(*) AS project_count
 FROM Project;
 
@@ -1236,7 +1236,7 @@ VALUES
     (8, 4, '2024-02-01', 'Data Analyst', 70),
     (9, 5, '2024-03-01', 'Business Analyst', 100),
     (10, 6, '2024-04-15', 'Developer', 90);
-    
+
     SELECT COUNT(*) AS assignment_count
 FROM Assignment;
 SELECT *
@@ -1259,7 +1259,7 @@ VALUES
     (8, '2024-12-15', '2024 Annual', 3, 'Meets expectations.'),
     (9, '2024-12-15', '2024 Annual', 5, 'Excellent analytical performance.'),
     (10, '2024-12-15', '2024 Annual', 4, 'Strong contribution to the project.');
-    
+
     SELECT COUNT(*) AS review_count
 FROM Reviews;
 

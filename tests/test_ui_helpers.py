@@ -35,10 +35,10 @@ def test_page_setup(monkeypatch):
     monkeypatch.setattr(ui_helpers.st, "set_page_config", config)
     monkeypatch.setattr(ui_helpers.st, "title", title)
 
-    ui_helpers.page_setup("Test", "🏢")
+    ui_helpers.page_setup("Test", "ðŸ¢")
 
     config.assert_called_once()
-    title.assert_called_once_with("🏢 Test")
+    title.assert_called_once_with("ðŸ¢ Test")
 
 
 def test_page_setup_survives_config_error(monkeypatch):
@@ -49,9 +49,9 @@ def test_page_setup_survives_config_error(monkeypatch):
     title = MagicMock()
     monkeypatch.setattr(ui_helpers.st, "title", title)
 
-    ui_helpers.page_setup("Test", "🏢")
+    ui_helpers.page_setup("Test", "ðŸ¢")
 
-    title.assert_called_once_with("🏢 Test")
+    title.assert_called_once_with("ðŸ¢ Test")
 
 
 def test_clear_dashboard_cache(monkeypatch):

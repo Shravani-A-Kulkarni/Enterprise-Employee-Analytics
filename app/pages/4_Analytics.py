@@ -3,7 +3,7 @@ import streamlit as st
 
 from ui_helpers import AnalyticsManager, DatabaseError, page_setup, show_error
 
-page_setup("Analytics Dashboard", "📊")
+page_setup("Analytics Dashboard", ":material/analytics:")
 
 
 # Every query is cached for 5 minutes; forms clear the cache after a write.
@@ -134,3 +134,5 @@ with tab_proj:
             st.dataframe(df, width="stretch", hide_index=True)
     except DatabaseError as exc:
         show_error(exc)
+
+

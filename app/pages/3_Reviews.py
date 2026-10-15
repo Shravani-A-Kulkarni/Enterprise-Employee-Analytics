@@ -7,7 +7,7 @@ from entities import RATING_LABELS
 from ui_helpers import (DatabaseError, EmployeeManager, ReviewManager,
                         clear_dashboard_cache, page_setup, show_error)
 
-page_setup("Performance Reviews", "⭐")
+page_setup("Performance Reviews", ":material/star:")
 manager = ReviewManager()
 
 tab_new, tab_hist = st.tabs(["Submit review", "Review history"])
